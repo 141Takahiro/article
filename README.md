@@ -1,12 +1,15 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 起動手順
+````bash
+docker build -t article .
+docker run --rm -p 4173:4173 article
+````
+## 使用技術・バージョン
+- React 19.1
+- daisyUI 5.0
+- tailwindCSS 4.1
+## ディレクトリ構成・設計意図
+投稿用ページをPost、閲覧用をView、一覧表示をListとして、独立したpagesコンポーネントに切り出し、App.jsxに呼び出すことでSPAとして構成しています。
+## 工夫した点
+コンポーネントの切り出しと、tailwindcssを使用した装飾。
+## 今後の改善ポイント
+typescriptの導入と、検索機能の実装を行いたいです。
