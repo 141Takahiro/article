@@ -1,8 +1,15 @@
 ## 起動手順
+Docker 2.0以上のバージョンをインストールした上で、実行してください。  
+1. イメージのbuild
 ````bash
 docker build -t article .
+````
+2. コンテナの立ち上げ
+````bash
 docker run --rm -p 4173:4173 article
 ````
+必要に応じて、-dオプションでバックグラウンドで起動してください。  
+http://localhost:4173/でアプリケーションを確認することが可能です。
 ## 使用技術・バージョン
 - React 19.1
 - daisyUI 5.0
