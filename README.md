@@ -1,5 +1,5 @@
 ## 起動手順
-Docker 2.0以上のバージョンをインストールした上で、実行してください。  
+Docker version 28.0.4で実行してください。  
 1. イメージのbuild
 ````bash
 docker build -t article .
