@@ -1,7 +1,8 @@
+import React, { useState } from 'react';
 
-function View({ id, onListClick, onEditClick }) {
-    const posts = JSON.parse(localStorage.getItem('posts') || '[]')
-    const post = posts.find(post => post.id === id)
+function View({ id, initialPosts, onListClick, onEditClick }) {
+    const [posts, setPosts] = useState(initialPosts);
+    const post = posts.find(post => post.id === id);
 
 
     return (

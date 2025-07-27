@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import TagModal from '../components/TagModal';
 
-function Post({ onListClick, id }) {
+function Post({ onListClick, id, initialPosts }) {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [tagInput, setTagInput] = useState('');
     const [tags, setTags] = useState([]);
-
-    const initialPosts = JSON.parse(localStorage.getItem('posts') || '[]');
     const [posts, setPosts] = useState(initialPosts);
-
     const [titleError, setTitleError] = useState('');
     const [contentError, setContentError] = useState('');
 
@@ -23,7 +20,7 @@ function Post({ onListClick, id }) {
 
     const handleSavePost = () => {
         const titleVal = validation(title, 'タイトルを入力してください');
-        const contentVal = validation(content, '内容を入力してください');
+        const contentVal = validation(content, '本文を入力してください');
 
         setTitleError(titleVal.error);
         setContentError(contentVal.error);

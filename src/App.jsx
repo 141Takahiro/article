@@ -6,6 +6,7 @@ import View from './pages/View';
 function App() {
   const [currentPage, setCurrentPage] = useState('list');
   const [selectedId, setSelectedId] = useState(null);
+  const initialPosts = JSON.parse(localStorage.getItem('posts') || '[]');
 
   const goToList = () => {
     setCurrentPage('list');
@@ -66,6 +67,7 @@ function App() {
               onPostClick={goToPost}
               onViewClick={goToView}
               onEditClick={goToEdit}
+              initialPosts={initialPosts}
             />
           )}
           {currentPage === 'post' && (
@@ -73,6 +75,8 @@ function App() {
               onListClick={goToList}
               onViewClick={goToView}
               id={selectedId}
+              initialPosts={initialPosts}
+
             />
           )}
           {currentPage === 'view' && (
@@ -82,14 +86,13 @@ function App() {
               onViewClick={goToView}
               onEditClick={goToEdit}
               id={selectedId}
+              initialPosts={initialPosts}
             />
           )}
         </div>
       </main>
 
       <footer className="footer bg-base-100 px-4">
-
-
         <div className="flex w-full justify-center">
           <p>created by Takahiro Ishii</p>
         </div>

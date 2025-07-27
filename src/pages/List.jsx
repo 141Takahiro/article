@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-function List({ onViewClick, onEditClick }) {
+function List({ onViewClick, onEditClick, initialPosts }) {
 
-    const initialPosts = JSON.parse(localStorage.getItem('posts') || '[]');
     const [posts, setPosts] = useState(initialPosts);
 
     const handleDelete = id => {
